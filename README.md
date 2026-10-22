@@ -4,6 +4,8 @@ An overlay finger rig and animation panel for Maya. It adds fist, spread, poses 
 
 Maya 2022+ (tested on Maya 2025) · Python 3 · PySide2 / PySide6 · Free for commercial use, modification OK, no redistribution
 
+**Get it on Gumroad (free, pay what you want):** https://sunnysideup73.gumroad.com/l/finger-master
+
 <img src="docs/panel.png" width="300" align="right">
 
 ## Features
@@ -26,7 +28,7 @@ Maya 2022+ (tested on Maya 2025) · Python 3 · PySide2 / PySide6 · Free for co
 
 ## Install
 
-1. Download `FingerMaster_vX.Y.Z.zip` from [Releases](../../releases) and unzip it.
+1. Download `FingerMaster_vX.Y.Z.zip` from [Releases](../../releases) or [Gumroad](https://sunnysideup73.gumroad.com/l/finger-master) and unzip it.
 2. In Maya, open the shelf where you want the button.
 3. Drag `install.mel` into the viewport.
 
