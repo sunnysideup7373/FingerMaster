@@ -1,0 +1,13 @@
+// Finger Master installer
+// Drag this file into the Maya viewport.
+
+global proc fingerMasterInstallerHere() {}
+
+{
+    string $where = `whatIs "fingerMasterInstallerHere"`;
+    string $file = `substitute "Mel procedure found in: " $where ""`;
+    string $dir = dirname($file);
+    python("import sys; sys.path.insert(0, r'" + $dir + "')");
+    python("import importlib, fingerMaster_installer as _fmi; importlib.reload(_fmi); _fmi.install(r'" + $dir + "')");
+    python("sys.path.remove(r'" + $dir + "')");
+}
