@@ -860,7 +860,9 @@ def _pose_net_remove(side, name):
     P = _p(side)
     m = P + 'hand_ctl'
     ln = _pw_attr(name)
-    nodes = cmds.ls('%s%s__*' % (P, ln), type='multDoubleLinear') or []
+    # Maya 2026 把 multDoubleLinear 改名为 multDL, ls(type=...) 查不到旧名
+    nodes = [n for n in cmds.ls('%s%s__*' % (P, ln)) or []
+             if cmds.objectType(n) in ('multDoubleLinear', 'multDL')]
     # 先断开再删 (删除仍连着下游的节点时 Maya 可能连下游一起删);
     # 断开后输入槽会保留最后的数值, 所以要把槽也删掉
     for n in nodes:
